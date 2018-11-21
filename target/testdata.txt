@@ -1,0 +1,511 @@
+2018-10-31 00:28:01 [pool-3-thread-15] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (12) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G0'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:f23573fb45534b98be4908b7f954e8e8_G0, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12, REFERENCE_ID: 982cc1_e8e8_G0_1540916881023, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-15] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 12: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G0'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:f23573fb45534b98be4908b7f954e8e8_G0, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12, REFERENCE_ID: 982cc1_e8e8_G0_1540916881023, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-15] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 12: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G0'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:f23573fb45534b98be4908b7f954e8e8_G0, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12, REFERENCE_ID: 982cc1_e8e8_G0_1540916881023, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G0'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:f23573fb45534b98be4908b7f954e8e8_G0, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12, REFERENCE_ID: 982cc1_e8e8_G0_1540916881023, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 12 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G0'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:f23573fb45534b98be4908b7f954e8e8_G0, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12, REFERENCE_ID: 982cc1_e8e8_G0_1540916881023, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (12) as pump ran into errors.
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[645195_c987_G2_1540916881235], remoteTarget[null], remoteSource[null], action[waitingForError]
+2018-10-31 00:28:01 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[3cca12_697_G12_1540916881085], ErrorCondition[com.microsoft:container-close, No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G12'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:ae324091ce8d455485f913858d9e4697_G12, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM]
+2018-10-31 00:28:01 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[3cca12_697_G12_1540916881085]
+2018-10-31 00:28:01 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-2] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (19) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G12'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:ae324091ce8d455485f913858d9e4697_G12, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19, REFERENCE_ID: 3cca12_697_G12_1540916881085, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-2] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 19: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G12'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:ae324091ce8d455485f913858d9e4697_G12, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19, REFERENCE_ID: 3cca12_697_G12_1540916881085, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-2] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 19: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G12'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:ae324091ce8d455485f913858d9e4697_G12, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19, REFERENCE_ID: 3cca12_697_G12_1540916881085, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G12'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:ae324091ce8d455485f913858d9e4697_G12, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19, REFERENCE_ID: 3cca12_697_G12_1540916881085, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:01 [pool-3-thread-4] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 12: Setting receive handler to null
+2018-10-31 00:28:01 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 19 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G12'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:ae324091ce8d455485f913858d9e4697_G12, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19, REFERENCE_ID: 3cca12_697_G12_1540916881085, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (19) as pump ran into errors.
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 12: Closing EH receiver
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[cdcd33]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[cf8285_dde_G26_1540916881232], remoteTarget[null], remoteSource[null], action[waitingForError]
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 19: Setting receive handler to null
+2018-10-31 00:28:01 [pool-3-thread-11] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5], sessionIncCapacity[0], sessionOutgoingWindow[2147483647]
+2018-10-31 00:28:01 [pool-3-thread-11] INFO  com.microsoft.azure.eventhubs.impl.PartitionReceiverImpl - receiverPath[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5], action[createReceiveLink], offset[23455048], sequenceNumber[null], enqueuedTime[null], inclusiveFlag[false]
+2018-10-31 00:28:01 [pool-3-thread-11] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[92814d_648f_G3_1540916881519], localSource[Source{address='dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5', durable=NONE, expiryPolicy=SESSION_END, timeout=0, dynamic=false, dynamicNodeProperties=null, distributionMode=null, filter={apache.org:selector-filter:string=UnknownDescribedType{descriptor=apache.org:selector-filter:string, described=amqp.annotation.x-opt-offset > '23875632'}}, defaultOutcome=null, outcomes=null, capabilities=null}]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 19: Closing EH receiver
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[645195_c987_G2_1540916881235], ErrorCondition[com.microsoft:container-close, No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G2'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:c09496a20d5641b9ab63cbb5c9e4c987_G2, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[645195_c987_G2_1540916881235]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[82d99a]
+2018-10-31 00:28:01 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[d1e68b_81c9_G7_1540916881316], remoteTarget[null], remoteSource[null], action[waitingForError]
+2018-10-31 00:28:01 [pool-3-thread-13] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (0) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G2'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:c09496a20d5641b9ab63cbb5c9e4c987_G2, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0, REFERENCE_ID: 645195_c987_G2_1540916881235, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-13] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 0: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G2'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:c09496a20d5641b9ab63cbb5c9e4c987_G2, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0, REFERENCE_ID: 645195_c987_G2_1540916881235, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-13] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 0: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G2'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:c09496a20d5641b9ab63cbb5c9e4c987_G2, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0, REFERENCE_ID: 645195_c987_G2_1540916881235, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G2'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:c09496a20d5641b9ab63cbb5c9e4c987_G2, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0, REFERENCE_ID: 645195_c987_G2_1540916881235, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:01 [pool-3-thread-11] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 12: Closing EH client
+2018-10-31 00:28:01 [pool-3-thread-12] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 0 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G2'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:c09496a20d5641b9ab63cbb5c9e4c987_G2, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0, REFERENCE_ID: 645195_c987_G2_1540916881235, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (0) as pump ran into errors.
+2018-10-31 00:28:01 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[ccff71]
+2018-10-31 00:28:01 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[MessagingFactoryc5dcb6]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionLocalClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-14] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cf8285_dde_G26_1540916881232], ErrorCondition[com.microsoft:container-close, No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G26'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:bedba9d31e9b408ab4ff51b029c5edde_G26, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM]
+2018-10-31 00:28:01 [pool-3-thread-14] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cf8285_dde_G26_1540916881232]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender]
+2018-10-31 00:28:01 [pool-3-thread-14] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-1] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 19: Closing EH client
+2018-10-31 00:28:01 [pool-3-thread-1] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (16) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G26'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:bedba9d31e9b408ab4ff51b029c5edde_G26, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16, REFERENCE_ID: cf8285_dde_G26_1540916881232, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-1] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 16: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G26'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:bedba9d31e9b408ab4ff51b029c5edde_G26, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16, REFERENCE_ID: cf8285_dde_G26_1540916881232, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-1] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 16: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G26'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:bedba9d31e9b408ab4ff51b029c5edde_G26, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16, REFERENCE_ID: cf8285_dde_G26_1540916881232, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G26'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:bedba9d31e9b408ab4ff51b029c5edde_G26, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16, REFERENCE_ID: cf8285_dde_G26_1540916881232, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 0: Setting receive handler to null
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[6a9ce1]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[MessagingFactorybc2f41]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 16 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G26'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:bedba9d31e9b408ab4ff51b029c5edde_G26, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16, REFERENCE_ID: cf8285_dde_G26_1540916881232, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (16) as pump ran into errors.
+2018-10-31 00:28:01 [pool-3-thread-9] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionLocalClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[d1e68b_81c9_G7_1540916881316], ErrorCondition[com.microsoft:container-close, No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G7'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:7ae26de6ad7b4f4cac0c915e010381c9_G7, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[d1e68b_81c9_G7_1540916881316]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-14] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 0: Closing EH receiver
+2018-10-31 00:28:01 [pool-3-thread-9] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (27) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G7'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:7ae26de6ad7b4f4cac0c915e010381c9_G7, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27, REFERENCE_ID: d1e68b_81c9_G7_1540916881316, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-9] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 27: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G7'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:7ae26de6ad7b4f4cac0c915e010381c9_G7, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27, REFERENCE_ID: d1e68b_81c9_G7_1540916881316, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-9] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 27: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G7'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:7ae26de6ad7b4f4cac0c915e010381c9_G7, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27, REFERENCE_ID: d1e68b_81c9_G7_1540916881316, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G7'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:7ae26de6ad7b4f4cac0c915e010381c9_G7, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27, REFERENCE_ID: d1e68b_81c9_G7_1540916881316, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:01 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:01 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[4c0631]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 16: Setting receive handler to null
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 27 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G7'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:01 PM TrackingId:7ae26de6ad7b4f4cac0c915e010381c9_G7, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:01 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27, REFERENCE_ID: d1e68b_81c9_G7_1540916881316, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (27) as pump ran into errors.
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30], sessionIncCapacity[0], sessionOutgoingWindow[2147483647]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.PartitionReceiverImpl - receiverPath[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30], action[createReceiveLink], offset[23235176], sequenceNumber[null], enqueuedTime[null], inclusiveFlag[false]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[8f1259_e491_G9_1540916881639], localSource[Source{address='dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30', durable=NONE, expiryPolicy=SESSION_END, timeout=0, dynamic=false, dynamicNodeProperties=null, distributionMode=null, filter={apache.org:selector-filter:string=UnknownDescribedType{descriptor=apache.org:selector-filter:string, described=amqp.annotation.x-opt-offset > '23678296'}}, defaultOutcome=null, outcomes=null, capabilities=null}]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.MessagingFactory - messagingFactory[MessagingFactoryc5dcb6], hostName[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn], info[cbsChannel closed]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionRemoteClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onTransportClosed: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], error[n/a]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionUnbound: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], state[CLOSED], remoteState[CLOSED]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/12]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 16: Closing EH receiver
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[e8f71f]
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 27: Setting receive handler to null
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.MessagingFactory - messagingFactory[MessagingFactorybc2f41], hostName[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn], info[cbsChannel closed]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionRemoteClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onTransportClosed: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], error[n/a]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionUnbound: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], state[CLOSED], remoteState[CLOSED]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/19]
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 0: Closing EH client
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 27: Closing EH receiver
+2018-10-31 00:28:01 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[bf7660]
+2018-10-31 00:28:01 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[MessagingFactory195962]
+2018-10-31 00:28:01 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:01 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[517fc6]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 12 is closing for reason Shutdown
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionLocalClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-8] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 16: Closing EH client
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 19 is closing for reason Shutdown
+2018-10-31 00:28:01 [pool-3-thread-4] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[7ee905]
+2018-10-31 00:28:01 [pool-3-thread-4] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[MessagingFactory6d4576]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionLocalClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 27: Closing EH client
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[2907ae]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[MessagingFactoryd2b2d3]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionLocalClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.MessagingFactory - messagingFactory[MessagingFactory195962], hostName[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn], info[cbsChannel closed]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionRemoteClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onTransportClosed: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], error[n/a]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionUnbound: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], state[CLOSED], remoteState[CLOSED]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/0]
+2018-10-31 00:28:01 [pool-3-thread-5] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[92814d_648f_G3_1540916881519], remoteTarget[null], remoteSource[null], action[waitingForError]
+2018-10-31 00:28:01 [pool-3-thread-14] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver], ErrorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.MessagingFactory - messagingFactory[MessagingFactory6d4576], hostName[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn], info[cbsChannel closed]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionRemoteClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onTransportClosed: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], error[n/a]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionUnbound: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], state[CLOSED], remoteState[CLOSED]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16]
+2018-10-31 00:28:01 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/16]
+2018-10-31 00:28:01 [pool-3-thread-14] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 0 is closing for reason Shutdown
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[92814d_648f_G3_1540916881519], ErrorCondition[com.microsoft:container-close, No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G3'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:9eb473898efc4518a4b0ccf09903648f_G3, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[92814d_648f_G3_1540916881519]
+2018-10-31 00:28:01 [pool-3-thread-13] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-1] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (5) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G3'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:9eb473898efc4518a4b0ccf09903648f_G3, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5, REFERENCE_ID: 92814d_648f_G3_1540916881519, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-1] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 5: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G3'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:9eb473898efc4518a4b0ccf09903648f_G3, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5, REFERENCE_ID: 92814d_648f_G3_1540916881519, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-1] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 5: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G3'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:9eb473898efc4518a4b0ccf09903648f_G3, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5, REFERENCE_ID: 92814d_648f_G3_1540916881519, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G3'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:9eb473898efc4518a4b0ccf09903648f_G3, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5, REFERENCE_ID: 92814d_648f_G3_1540916881519, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:01 [pool-3-thread-9] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 16 is closing for reason Shutdown
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 5 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G3'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:9eb473898efc4518a4b0ccf09903648f_G3, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5, REFERENCE_ID: 92814d_648f_G3_1540916881519, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:01 [pool-3-thread-7] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (5) as pump ran into errors.
+2018-10-31 00:28:01 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[8f1259_e491_G9_1540916881639], remoteTarget[null], remoteSource[null], action[waitingForError]
+2018-10-31 00:28:01 [pool-3-thread-2] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 5: Setting receive handler to null
+2018-10-31 00:28:01 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:01 [pool-3-thread-16] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 5: Closing EH receiver
+2018-10-31 00:28:02 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:02 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[3aa674]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[8f1259_e491_G9_1540916881639], ErrorCondition[com.microsoft:container-close, No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G9'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:128c39dd3d454e1b93d9d48ffff3e491_G9, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[8f1259_e491_G9_1540916881639]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:02 [pool-3-thread-2] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (30) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G9'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:128c39dd3d454e1b93d9d48ffff3e491_G9, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30, REFERENCE_ID: 8f1259_e491_G9_1540916881639, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:02 [pool-3-thread-2] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 30: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G9'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:128c39dd3d454e1b93d9d48ffff3e491_G9, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30, REFERENCE_ID: 8f1259_e491_G9_1540916881639, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:02 [pool-3-thread-2] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 30: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G9'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:128c39dd3d454e1b93d9d48ffff3e491_G9, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30, REFERENCE_ID: 8f1259_e491_G9_1540916881639, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G9'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:128c39dd3d454e1b93d9d48ffff3e491_G9, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30, REFERENCE_ID: 8f1259_e491_G9_1540916881639, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 30 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G9'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:02 PM TrackingId:128c39dd3d454e1b93d9d48ffff3e491_G9, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:02 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30, REFERENCE_ID: 8f1259_e491_G9_1540916881639, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (30) as pump ran into errors.
+2018-10-31 00:28:02 [pool-3-thread-10] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 5: Closing EH client
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[c994e7]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[MessagingFactoryac9696]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 30: Setting receive handler to null
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionLocalClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender]
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver]
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:02 [pool-3-thread-13] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 30: Closing EH receiver
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[0f053b]
+2018-10-31 00:28:02 [pool-3-thread-8] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender], ErrorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver], ErrorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.MessagingFactory - messagingFactory[MessagingFactoryac9696], hostName[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn], info[cbsChannel closed]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionRemoteClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onTransportClosed: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], error[n/a]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionUnbound: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], state[CLOSED], remoteState[CLOSED]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/5]
+2018-10-31 00:28:02 [pool-3-thread-13] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 30: Closing EH client
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[d304de]
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[MessagingFactory59deba]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionLocalClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:02 [pool-3-thread-5] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 5 is closing for reason Shutdown
+2018-10-31 00:28:02 [pool-3-thread-7] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:02 [pool-3-thread-6] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender], ErrorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver], ErrorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.MessagingFactory - messagingFactory[MessagingFactory59deba], hostName[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn], info[cbsChannel closed]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionRemoteClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onTransportClosed: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], error[n/a]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionUnbound: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], state[CLOSED], remoteState[CLOSED]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30]
+2018-10-31 00:28:02 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/30]
+2018-10-31 00:28:02 [pool-3-thread-1] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 30 is closing for reason Shutdown
+2018-10-31 00:28:02 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:sender], ErrorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[cbs:receiver], ErrorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.MessagingFactory - messagingFactory[MessagingFactoryd2b2d3], hostName[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn], info[cbsChannel closed]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionRemoteClose: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], errorCondition[null, null]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onTransportClosed: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], error[n/a]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.ConnectionHandler - onConnectionUnbound: hostname[consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn:5671], state[CLOSED], remoteState[CLOSED]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[cbs-session]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27]
+2018-10-31 00:28:02 [pool-3-thread-16] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/27]
+2018-10-31 00:28:02 [pool-3-thread-12] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 27 is closing for reason Shutdown
+2018-10-31 00:28:04 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23], sessionIncCapacity[0], sessionOutgoingWindow[2147483647]
+2018-10-31 00:28:04 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.PartitionReceiverImpl - receiverPath[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23], action[createReceiveLink], offset[23279128], sequenceNumber[null], enqueuedTime[null], inclusiveFlag[false]
+2018-10-31 00:28:04 [pool-3-thread-10] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[01111b_612_G29_1540916884874], localSource[Source{address='dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23', durable=NONE, expiryPolicy=SESSION_END, timeout=0, dynamic=false, dynamicNodeProperties=null, distributionMode=null, filter={apache.org:selector-filter:string=UnknownDescribedType{descriptor=apache.org:selector-filter:string, described=amqp.annotation.x-opt-offset > '23752632'}}, defaultOutcome=null, outcomes=null, capabilities=null}]
+2018-10-31 00:28:05 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ReceiveLinkHandler - linkName[01111b_612_G29_1540916884874], remoteTarget[null], remoteSource[null], action[waitingForError]
+2018-10-31 00:28:05 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[01111b_612_G29_1540916884874], ErrorCondition[com.microsoft:container-close, No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G29'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:05 PM TrackingId:31dc8e6821ff4565ba2adc5582a98612_G29, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:05 PM]
+2018-10-31 00:28:05 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.BaseLinkHandler - linkName[01111b_612_G29_1540916884874]
+2018-10-31 00:28:05 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:05 [pool-3-thread-14] WARN  com.microsoft.azure.eventhubs.impl.ReceivePump - Receive pump for partition (23) exiting after receive exception java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G29'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:05 PM TrackingId:31dc8e6821ff4565ba2adc5582a98612_G29, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:05 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23, REFERENCE_ID: 01111b_612_G29_1540916884874, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:05 [pool-3-thread-14] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 23: EventHub client error: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G29'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:05 PM TrackingId:31dc8e6821ff4565ba2adc5582a98612_G29, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:05 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23, REFERENCE_ID: 01111b_612_G29_1540916884874, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:05 [pool-3-thread-14] WARN  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 23: EventHub client error continued
+java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G29'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:05 PM TrackingId:31dc8e6821ff4565ba2adc5582a98612_G29, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:05 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23, REFERENCE_ID: 01111b_612_G29_1540916884874, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+    at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+    at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+    at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+    at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+    at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.completeExceptionally(ExceptionUtil.java:98)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.drainPendingReceives(MessageReceiver.java:439)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onError(MessageReceiver.java:425)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:658)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.processOnClose(BaseLinkHandler.java:50)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.handleRemoteLinkClosed(BaseLinkHandler.java:70)
+    at com.microsoft.azure.eventhubs.impl.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:36)
+    at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+    at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:324)
+    at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:291)
+    at com.microsoft.azure.eventhubs.impl.MessagingFactory$RunReactor.run(MessagingFactory.java:487)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G29'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:05 PM TrackingId:31dc8e6821ff4565ba2adc5582a98612_G29, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:05 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23, REFERENCE_ID: 01111b_612_G29_1540916884874, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+    at com.microsoft.azure.eventhubs.impl.ExceptionUtil.toException(ExceptionUtil.java:60)
+    at com.microsoft.azure.eventhubs.impl.MessageReceiver.onClose(MessageReceiver.java:657)
+    ... 15 common frames omitted
+2018-10-31 00:28:05 [pool-3-thread-11] INFO  com.nequal.bdh.crm.biz.eventhub.EventProcessor - CRM Service: Partition 23 onError: java.util.concurrent.CompletionException: com.microsoft.azure.eventhubs.EventHubException: No connection handler was found for virtual host '25842'. Remote container id is '7A2E0A0515A9427F82D1ACF7F25A024D_G29'. TrackingId:5a97090346224caa82578ab652e024fe_B9, SystemTracker:SharedConnectionListener, Timestamp:10/30/2018 4:28:05 PM TrackingId:31dc8e6821ff4565ba2adc5582a98612_G29, SystemTracker:gateway7, Timestamp:10/30/2018 4:28:05 PM, errorContext[NS: consumer-prd-streaming-dmp.servicebus.chinacloudapi.cn, PATH: dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23, REFERENCE_ID: 01111b_612_G29_1540916884874, PREFETCH_COUNT: 300, LINK_CREDIT: 0, PREFETCH_Q_LEN: 0]
+2018-10-31 00:28:05 [pool-3-thread-11] INFO  com.microsoft.azure.eventhubs.impl.ReceivePump - Stopping receive pump for partition (23) as pump ran into errors.
+2018-10-31 00:28:05 [pool-3-thread-2] INFO  com.microsoft.azure.eventhubs.impl.SessionHandler - entityName[dmp-producer/ConsumerGroups/dmp-cm-sync/Partitions/23], condition[Error{condition=null, description='null', info=null}]
+2018-10-31 00:28:05 [pool-3-thread-13] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 23: Setting receive handler to null
+2018-10-31 00:28:05 [pool-3-thread-6] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 23: Closing EH receiver
+2018-10-31 00:28:05 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[null]
+2018-10-31 00:28:05 [pool-3-thread-15] INFO  com.microsoft.azure.eventhubs.impl.ClientEntity - close: clientId[0dcfe1]
+2018-10-31 00:28:05 [pool-3-thread-10] INFO  com.microsoft.azure.eventprocessorhost.PartitionPump - host CRMServiceHost-dd9fb337-f639-4ec9-9a76-7288854f0406: 23: Closing EH client
